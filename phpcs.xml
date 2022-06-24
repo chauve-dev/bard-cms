@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+    The name attribute of the ruleset tag is displayed
+    when running PHP_CodeSniffer with the -v command line
+    argument.
+ -->
+<ruleset name="Standard">
+    <description>A custom coding standard</description>
+
+    <arg name="extensions" value="php,inc" />
+    <arg name="report" value="full" />
+    <arg name="colors" />
+    <!--
+      Include all sniffs in the PSR1 and PSR12 standard.
+   -->
+    <rule ref="PSR1">
+        <exclude name="PSR1.Files.SideEffects" />
+        <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps" />
+    </rule>
+    <rule ref="PSR12" />
+    using the -s command line argument while checking a file.
+    <rule ref="Internal.NoCodeFound">
+        <severity>0</severity>
+    </rule>
+</ruleset>
